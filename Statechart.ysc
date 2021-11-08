@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_FDQVoEDsEeyNrtnA8WIVHA" specification="// @EventDriven&#xA;@CycleBased(200) &#xA;&#xA;&#xA;// Use @SuperSteps(yes) to enable&#xA;// super step semantics.&#xA;@SuperSteps(no)&#xA;&#xA;interface:&#xA;&#x9;// Define events and variables here. &#xA;&#x9;// Use CTRL + Space for content assist.&#xA;&#x9;in event myEvent&#xA;&#x9;&#xA;interface click:&#xA;  in event menu" name="Statechart">
+  <sgraph:Statechart xmi:id="_FDQVoEDsEeyNrtnA8WIVHA" specification="// @EventDriven&#xA;@CycleBased(200) &#xA;&#xA;&#xA;// Use @SuperSteps(yes) to enable&#xA;// super step semantics.&#xA;@SuperSteps(no)&#xA;&#xA;interface:&#xA;&#x9;// Define events and variables here. &#xA;&#x9;// Use CTRL + Space for content assist.&#xA;&#x9;in event myEvent&#xA;&#x9;&#xA;interface click:&#xA;  in event menu&#xA;  &#xA;  interface state:&#xA;    var temperature: integer = 20&#xA;    &#xA;    &#xA;  interface config:&#xA;    var stop_time: integer = 1&#xA;    var stop_temperature: integer = 50&#xA;    var mosturation_time: integer = 1&#xA;    var mosturation_temperature: integer = 50&#xA;    var mashout_time: integer = 1&#xA;    var mashout_temperature: integer = 50&#xA;    var boiling_time: integer = 1" name="Statechart">
     <regions xmi:id="_FDQ8u0DsEeyNrtnA8WIVHA" name="main region">
       <vertices xsi:type="sgraph:Entry" xmi:id="_FDQ8vEDsEeyNrtnA8WIVHA">
         <outgoingTransitions xmi:id="_j2WPYEDsEeyNrtnA8WIVHA" specification="" target="_uBWq0EDsEeyNrtnA8WIVHA"/>
@@ -12,7 +12,7 @@
             <outgoingTransitions xmi:id="_fmSIYEDsEeyNrtnA8WIVHA" specification="" target="_X6bP8EDsEeyNrtnA8WIVHA"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_X6bP8EDsEeyNrtnA8WIVHA" name="idle" incomingTransitions="_fmSIYEDsEeyNrtnA8WIVHA">
-            <outgoingTransitions xmi:id="_hC20EEDsEeyNrtnA8WIVHA" specification="always" target="_Ysb7sEDsEeyNrtnA8WIVHA"/>
+            <outgoingTransitions xmi:id="_hC20EEDsEeyNrtnA8WIVHA" specification="after config.stop_time s" target="_Ysb7sEDsEeyNrtnA8WIVHA"/>
           </vertices>
           <vertices xsi:type="sgraph:Exit" xmi:id="_Ysb7sEDsEeyNrtnA8WIVHA" name="end" incomingTransitions="_hC20EEDsEeyNrtnA8WIVHA"/>
         </regions>
@@ -316,11 +316,11 @@
     <edges xmi:id="_hC4CMEDsEeyNrtnA8WIVHA" type="Transition" element="_hC20EEDsEeyNrtnA8WIVHA" source="_X6b3AEDsEeyNrtnA8WIVHA" target="_YsciwEDsEeyNrtnA8WIVHA">
       <children xsi:type="notation:DecorationNode" xmi:id="_hC5QUEDsEeyNrtnA8WIVHA" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_hC5QUUDsEeyNrtnA8WIVHA"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_hC5QUkDsEeyNrtnA8WIVHA" x="-28" y="9"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_hC5QUkDsEeyNrtnA8WIVHA" x="5" y="8"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_hC4CMUDsEeyNrtnA8WIVHA" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_hC4pQEDsEeyNrtnA8WIVHA" fontName="Verdana"/>
-      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_hC4CMkDsEeyNrtnA8WIVHA" points="[27, 30, -103, -2]$[123, 30, -7, -2]"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_hC4CMkDsEeyNrtnA8WIVHA" points="[-8, 53, -138, 21]$[-8, 66, -138, 34]$[130, 66, 0, 34]$[130, 39, 0, 7]"/>
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_hC-I0EDsEeyNrtnA8WIVHA" id="(0.6142857142857143,0.0)"/>
     </edges>
     <edges xmi:id="_j2XdgEDsEeyNrtnA8WIVHA" type="Transition" element="_j2WPYEDsEeyNrtnA8WIVHA" source="_FDRj30DsEeyNrtnA8WIVHA" target="_uBVcsUDsEeyNrtnA8WIVHA">
